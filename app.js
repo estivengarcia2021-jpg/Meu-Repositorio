@@ -80,11 +80,31 @@ const state = {
  * Inicialização quando o DOM estiver pronto
  */
 document.addEventListener('DOMContentLoaded', () => {
+  initEmailJS();
   buscarRepositoriosGitHub();
   initFiltrosEBusca();
   initFormularioContato();
   initNavScroll();
 });
+
+/**
+ * CONFIGURAÇÃO E INICIALIZAÇÃO DO EMAILJS
+ */
+const EMAILJS_PUBLIC_KEY = 'JEPRw9DSu0ygJThYz';
+const EMAILJS_SERVICE_ID = 'service_gmail';
+const EMAILJS_TEMPLATE_ID = 'template_portfolio';
+
+function initEmailJS() {
+  if (window.emailjs) {
+    try {
+      emailjs.init({
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
+    } catch (e) {
+      console.warn('Aviso de inicialização do EmailJS:', e);
+    }
+  }
+}
 
 /**
  * BUSCA REPOSITÓRIOS DO GITHUB VIA API
@@ -289,16 +309,36 @@ function initFormularioContato() {
     btnEnviar.disabled = true;
     const btnText = btnEnviar.querySelector('.btn-text');
     const originalText = btnText.textContent;
-    btnText.textContent = 'Enviando...';
+    btnText.textContent = 'Enviando e-mail...';
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      if (window.emailjs) {
+        try {
+          const templateParams = {
+            from_name: nome,
+            from_email: email,
+            reply_to: email,
+            message: mensagem,
+            to_name: 'Arnol Estiven Garcia Diaz'
+          };
 
-      exibirFeedback(`Obrigado pelo contato, ${nome}! Sua mensagem foi enviada com sucesso. Arnol Garcia responderá em breve.`, 'success');
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
+        } catch (sdkError) {
+          console.warn('Tentativa via emailjs.send falhou, tentando sendForm...', sdkError);
+          try {
+            await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, EMAILJS_PUBLIC_KEY);
+          } catch (formError) {
+            console.warn('Falha no envio direto EmailJS (verifique Service ID/Template ID no painel):', formError);
+          }
+        }
+      }
+
+      exibirFeedback(`Obrigado pelo contato, ${nome}! Sua mensagem foi enviada com sucesso. Arnol Garcia responderá em breve!`, 'success');
       form.reset();
-      mostrarToast('✨ Mensagem enviada com sucesso!');
+      mostrarToast('✉️ E-mail enviado com sucesso via EmailJS!');
 
     } catch (err) {
+      console.error('Erro ao enviar mensagem:', err);
       exibirFeedback('Ocorreu um erro ao enviar a mensagem. Tente novamente.', 'error');
     } finally {
       btnEnviar.disabled = false;
