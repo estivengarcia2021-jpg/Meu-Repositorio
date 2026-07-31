@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arnol Estiven Garcia Diaz | Desenvolvedor Frontend</title>
+  <meta name="description" content="Portfólio de Arnol Estiven Garcia Diaz - Desenvolvedor Frontend focado em aplicações escaláveis e resolução de problemas complexos através do código." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Barra de Navegação Fixo -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="#apresentacao" class="brand-logo">
+        <span class="code-tag">&lt;</span>ArnolGarcia<span class="code-tag"> /&gt;</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#apresentacao" class="nav-link active">Sobre</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span class="status-text">Disponível para Projetos</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Header (Apresentação & Sobre) -->
+    <section id="apresentacao" class="section hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-role">
+            <span class="sparkle">✨</span> Senior Frontend Engineer
+          </div>
+          <h1 class="hero-name">Arnol Estiven Garcia Diaz</h1>
+          <h2 class="hero-title">Desenvolvedor Frontend</h2>
+          <p class="hero-bio">
+            Estou focado em construir aplicações escaláveis e resolver problemas complexos através do código.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projetos" class="btn btn-primary">
+              Ver Projetos
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#contato" class="btn btn-secondary">
+              Entrar em Contato
+            </a>
+          </div>
+
+          <!-- Lista / Badges de Tecnologias Solicitadas -->
+          <div class="tech-stack-container">
+            <h3 class="tech-stack-title">Tecnologias &amp; Ferramentas</h3>
+            <ul class="tech-badges-list" aria-label="Tecnologias que utilizo">
+              <li class="tech-badge" data-tech="JavaScript"><span class="badge-dot js"></span>JavaScript</li>
+              <li class="tech-badge" data-tech="TypeScript"><span class="badge-dot ts"></span>TypeScript</li>
+              <li class="tech-badge" data-tech="Python"><span class="badge-dot python"></span>Python</li>
+              <li class="tech-badge" data-tech="React"><span class="badge-dot react"></span>React</li>
+              <li class="tech-badge" data-tech="Next.js"><span class="badge-dot next"></span>Next.js</li>
+              <li class="tech-badge" data-tech="HTML5"><span class="badge-dot html"></span>HTML5</li>
+              <li class="tech-badge" data-tech="CSS3"><span class="badge-dot css"></span>CSS3</li>
+              <li class="tech-badge" data-tech="Tailwind CSS"><span class="badge-dot tailwind"></span>Tailwind CSS</li>
+              <li class="tech-badge" data-tech="Node.js"><span class="badge-dot node"></span>Node.js</li>
+              <li class="tech-badge" data-tech="Express"><span class="badge-dot express"></span>Express</li>
+              <li class="tech-badge" data-tech="PostgreSQL"><span class="badge-dot postgres"></span>PostgreSQL</li>
+              <li class="tech-badge" data-tech="Git"><span class="badge-dot git"></span>Git</li>
+              <li class="tech-badge" data-tech="Docker"><span class="badge-dot docker"></span>Docker</li>
+              <li class="tech-badge" data-tech="GitHub Actions"><span class="badge-dot actions"></span>GitHub Actions</li>
+              <li class="tech-badge" data-tech="VS Code"><span class="badge-dot vscode"></span>VS Code</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Espaço para Foto de Perfil -->
+        <div class="hero-avatar-wrapper">
+          <div class="avatar-card">
+            <div class="avatar-frame">
+              <img src="avatar.jpg" alt="Foto de Arnol Estiven Garcia Diaz" class="profile-photo" id="foto-perfil" onerror="this.onerror=null; this.src='https://github.com/ARNOL-ESTIVEN.png';" />
+            </div>
+            <div class="avatar-details">
+              <div class="avatar-info-row">
+                <span class="info-label">Especialidade:</span>
+                <span class="info-value">Desenvolvimento Frontend</span>
+              </div>
+              <div class="avatar-info-row">
+                <span class="info-label">Foco:</span>
+                <span class="info-value">Aplicações Escaláveis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Seção de Projetos -->
+    <section id="projetos" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfólio &amp; Trabalhos</span>
+          <h2 class="section-title">Projetos em Destaque</h2>
+          <p class="section-desc">Aplicações desenvolvidas focando em performance, arquitetura limpa e excelente experiência de usuário.</p>
+        </div>
+
+        <!-- Filtros e Busca Dinâmica -->
+        <div class="projects-controls">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="input-busca-projetos" placeholder="Buscar por projeto ou tecnologia..." />
+          </div>
+          <div class="filter-pills" id="filtro-tecnologias">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="React">React</button>
+            <button class="filter-btn" data-filter="Node.js">Node.js</button>
+            <button class="filter-btn" data-filter="TypeScript">TypeScript</button>
+            <button class="filter-btn" data-filter="Next.js">Next.js</button>
+            <button class="filter-btn" data-filter="Python">Python</button>
+          </div>
+        </div>
+
+        <!--
+          PROJETO INICIAL DE REFERÊNCIA:
+          - Título: MusicSync - Salas de Audição Sincronizadas
+          - Descrição: "Aplicação que conecta pessoas do mundo inteiro para ouvir música em salas de audição sincronizadas"
+          - Tecnologias principais: React, Node.js
+          
+          Esta <div id="lista-projetos"></div> vazia recebe os cards dinamicamente via app.js
+        -->
+        <div id="lista-projetos" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- 3. Seção de Contato -->
+    <section id="contato" class="section contact-section">
+      <div class="container contact-container">
+        <div class="contact-card">
+          <div class="contact-header">
+            <span class="section-subtitle">Vamos conversar</span>
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-desc">Envie uma mensagem para propostas, dúvidas ou oportunidades de colaboração.</p>
+          </div>
+
+          <!-- Formulário completo: Nome, E-mail, Mensagem, Button submit -->
+          <form id="form-contato" class="contact-form">
+            <div class="form-group">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome completo" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="seu.email@exemplo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem" class="form-label">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" class="form-textarea" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+            </div>
+
+            <div class="form-action">
+              <button type="submit" id="btn-enviar" class="btn btn-primary btn-submit">
+                <span class="btn-text">Enviar</span>
+                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+
+            <div id="feedback-form" class="feedback-message" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Arnol Estiven Garcia Diaz. Desenvolvedor Frontend.</p>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Script Base app.js -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
