@@ -57,6 +57,24 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Background ASCII Digital Rain Canvas */
+.ascii-rain-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 a {
