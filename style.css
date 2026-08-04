@@ -394,14 +394,18 @@ button, input, textarea {
   background-color: var(--bg-elevated);
 }
 
-.profile-photo {
+.profile-photo,
+.profile-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  display: block;
   transition: transform 0.5s ease;
 }
 
-.avatar-card:hover .profile-photo {
+.avatar-card:hover .profile-photo,
+.avatar-card:hover .profile-video {
   transform: scale(1.03);
 }
 
